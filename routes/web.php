@@ -5,10 +5,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\HomeController;
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
