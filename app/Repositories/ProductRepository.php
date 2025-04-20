@@ -40,20 +40,20 @@ class ProductRepository extends EloquentRepository implements ProductRepositoryI
     {
         $query = $this->model->where('is_active', true);
 
-        if (isset($filters['category'])) {
+        if (!empty($filters['category'])) {
             $query->whereHas('categories', function($q) use ($filters) {
                 $q->where('categories.id', $filters['category']);
             });
         }
 
-        if (isset($filters['search'])) {
+        if (!empty($filters['search'])) {
             $query->where(function($q) use ($filters) {
                 $q->where('name', 'like', "%{$filters['search']}%")
                     ->orWhere('description', 'like', "%{$filters['search']}%");
             });
         }
 
-        if (isset($filters['sort'])) {
+        if (!empty($filters['sort'])) {
             switch ($filters['sort']) {
                 case 'price_asc':
                     $query->orderBy('price', 'asc');

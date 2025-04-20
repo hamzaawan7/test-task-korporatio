@@ -1,9 +1,10 @@
 <?php
 
+use App\Livewire\ProductDetails;
+use App\Livewire\HomePage;
+use App\Livewire\ProductListing;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\HomeController;
 
 Route::middleware([
     'auth:sanctum',
@@ -16,19 +17,20 @@ Route::middleware([
 });
 
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', HomePage::class)->name('home');
 
 // Product Routes
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
+Route::get('/products', ProductListing::class)->name('products.index');
+Route::get('/products/{slug}', ProductDetails::class)->name('products.show');
 
 // Order Routes
 Route::middleware(['auth'])->group(function () {
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
+    Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
 });
 
-Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
+
 
 // Authentication Routes
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

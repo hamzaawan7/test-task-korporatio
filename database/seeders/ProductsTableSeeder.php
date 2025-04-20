@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Product;
-use App\Models\Category;
+use Illuminate\Support\Str;
 
 class ProductsTableSeeder extends Seeder
 {
@@ -62,6 +62,7 @@ class ProductsTableSeeder extends Seeder
         ];
 
         foreach ($products as $productData) {
+            $productData['slug'] = Str::slug($productData['name']);
             $categories = $productData['categories'];
             unset($productData['categories']);
 

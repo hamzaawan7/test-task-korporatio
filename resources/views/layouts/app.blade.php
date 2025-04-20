@@ -14,8 +14,7 @@
 
 <!-- Dynamic Content Area -->
 <main class="container mx-auto px-4 py-6 min-h-screen">
-    @yield('content') <!-- For traditional Blade views -->
-    {{ $slot ?? '' }} <!-- For Livewire components -->
+    @yield('content')
 </main>
 
 @livewireScripts

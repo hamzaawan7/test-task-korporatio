@@ -9,13 +9,17 @@ class ProductCard extends Component
 {
     public Product $product;
 
-    public function render()
-    {
-        return view('livewire.product-card');
+    public function mount(Product $product){
+        $this->product = $product;
     }
 
     public function addToCart()
     {
         $this->emit('productAddedToCart', $this->product->id);
+    }
+
+    public function render()
+    {
+        return view('livewire.product-card');
     }
 }
