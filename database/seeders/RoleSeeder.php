@@ -42,6 +42,11 @@ class RoleSeeder extends Seeder
         $admin->givePermissionTo(Permission::all());
 
         $customer = Role::create(['name' => 'customer']);
-        $customer->givePermissionTo(['view products', 'view categories', 'create orders']);
+        $customer->givePermissionTo([
+            'view orders',
+            'create orders',
+            'edit orders',
+            'delete orders',
+        ]);
     }
 }

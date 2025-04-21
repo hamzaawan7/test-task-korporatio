@@ -106,13 +106,13 @@
                                         {{ $product->stock_quantity > 0 ? 'In Stock' : 'Out of Stock' }}
                                     </span>
 
-                                    <button
-                                        wire:click="addToCart"
+                                    <a
+                                        href="{{ route('products.show', $product->slug) }}"
                                         class="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors duration-200 {{ $product->stock_quantity <= 0 ? 'opacity-50 cursor-not-allowed' : '' }}"
                                         {{ $product->stock_quantity <= 0 ? 'disabled' : '' }}
                                     >
                                         Add to Cart
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         @endif

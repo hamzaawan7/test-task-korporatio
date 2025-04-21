@@ -28,8 +28,8 @@ class CategoryResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Select::make('parent_id')
                     ->label('Parent Category')
-                    ->options(Category::all()->pluck('name', 'id'))
-                    ->searchable()
+                    ->options(Category::whereNull('parent_id')->pluck('name', 'id'))
+                    ->searchable(),
             ]);
     }
 
