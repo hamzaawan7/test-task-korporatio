@@ -3,10 +3,9 @@
 namespace App\Repositories;
 
 use App\Models\Product;
-use App\Repositories\EloquentRepository;
 use App\Repositories\Interfaces\ProductRepositoryInterface;
 
-class ProductRepository extends EloquentRepository implements ProductRepositoryInterface
+class ProductRepository extends BaseRepository implements ProductRepositoryInterface
 {
     public function __construct(Product $model)
     {

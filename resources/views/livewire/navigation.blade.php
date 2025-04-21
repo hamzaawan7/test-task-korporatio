@@ -10,6 +10,9 @@
             <div class="flex items-center space-x-4">
                 <a href="{{ route('products.index') }}" class="text-gray-700 hover:text-gray-900">Shop</a>
                 @auth
+                    @if(auth()->user()->hasRole('customer'))
+                        <a href="{{ url('/customer/dashboard') }}" class="text-gray-700 hover:text-gray-900" target="_blank">Dashboard</a>
+                    @endif
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submit" class="text-gray-700 hover:text-gray-900">Logout</button>

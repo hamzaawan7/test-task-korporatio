@@ -4,7 +4,7 @@ namespace App\Repositories\Interfaces;
 
 use App\Models\Product;
 
-interface ProductRepositoryInterface extends RepositoryInterface
+interface ProductRepositoryInterface extends BaseRepositoryInterface
 {
     public function getFeaturedProducts($limit = 5);
     public function getProductsByCategory($categoryId);

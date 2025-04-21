@@ -73,7 +73,7 @@ class ProductListing extends Component
             'search' => $this->search,
             'category' => $this->category,
             'sort' => $this->getSortOption(),
-            'per_page' => 12, // Make sure this matches your blade
+            'per_page' => 12,
         ];
     }
 

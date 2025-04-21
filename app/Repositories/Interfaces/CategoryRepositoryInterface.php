@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Interfaces;
 
-interface CategoryRepositoryInterface extends RepositoryInterface
+interface CategoryRepositoryInterface extends BaseRepositoryInterface
 {
     public function getParentCategories();
     public function getChildCategories($parentId);

@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class RedirectIfNotCustomer
+class RedirectIfNotAdmin
 {
     /**
      * @param Request $request
@@ -15,7 +15,7 @@ class RedirectIfNotCustomer
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!auth()->check() || !auth()->user()->hasRole('customer')) {
+        if (!auth()->check() || !auth()->user()->hasRole('admin')) {
 
             return redirect('/login');
         }

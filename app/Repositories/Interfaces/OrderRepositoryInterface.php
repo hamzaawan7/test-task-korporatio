@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Interfaces;
 
-interface OrderRepositoryInterface extends RepositoryInterface
+interface OrderRepositoryInterface extends BaseRepositoryInterface
 {
     public function getUserOrders($userId);
     public function getOrdersByStatus($status);

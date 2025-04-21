@@ -35,7 +35,7 @@
                         wire:model.live.debounce.300ms="sort"
                         class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                     >
-                        <option value="">Sort</option>
+                        <option value="">Reset</option>
                         <option value="latest">Latest</option>
                         <option value="price_low">Price: Low to High</option>
                         <option value="price_high">Price: High to Low</option>
@@ -47,11 +47,12 @@
         </div>
 
         <!-- Loader -->
-        <div wire:loading class="flex justify-center py-12">
-            <svg class="animate-spin h-16 w-16 text-orange-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div wire:loading class="flex justify-center items-center w-full">
+            <svg class="animate-spin h-16 w-16 text-orange-400 text-center" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16M12 4v16" />
             </svg>
         </div>
+
 
         <!-- All Products Section -->
         <h2 class="text-3xl font-bold text-gray-900 mb-6">All Products</h2>

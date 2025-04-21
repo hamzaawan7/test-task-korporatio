@@ -14,10 +14,8 @@ class ProductDetails extends Component
 
     public function mount(string $slug)
     {
-        // Fetch product by slug
         $this->product = Product::where('slug', $slug)->firstOrFail();
 
-        // Fetch related products (using some method in ProductService)
         $this->relatedProducts = app(ProductService::class)->getRelatedProducts($this->product);
     }
 

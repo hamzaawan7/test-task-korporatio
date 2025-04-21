@@ -1,61 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Test Task Korporatio Project
+### E-Commerce Platform with TALL Stack
+
+[![Laravel Version](https://img.shields.io/badge/Laravel-11-%23FF2D20?style=for-the-badge&logo=laravel)](https://laravel.com)
+[![TALL Stack](https://img.shields.io/badge/TALL-Stack-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tallstack.dev)
+[![PHP Version](https://img.shields.io/badge/PHP-8.3+-%23777BB4?style=for-the-badge&logo=php)](https://php.net)
+[![Node Version](https://img.shields.io/badge/Node-23.6+-%23339933?style=for-the-badge&logo=node.js)](https://nodejs.org)
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
+  <br>
+  <strong>Modern E-Commerce Solution Built with Laravel 11 and TALL Stack</strong>
 </p>
 
-## About Laravel
+## 🚀 Getting Started
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Prerequisites
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- PHP 8.3+
+- Node.js 23.6+
+- Composer 2.6+
+- MySQL 8.0+ or MariaDB 10.6+
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Installation
 
-## Learning Laravel
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/hamzaawan7/test-task-korporatio.git
+   cd ecommerce
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+INSTALLATION
+------------
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1. Install PHP Dependencies:
+   $ composer install
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+2. Install JavaScript Dependencies:
+   $ npm install
 
-## Laravel Sponsors
+ENVIRONMENT SETUP
+-----------------
+$ cp .env.example .env
+$ php artisan key:generate
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+CONFIGURATION
+-------------
 
-### Premium Partners
+Database Setup:
+1. Create new MySQL database
+2. Update .env file with:
+   DB_DATABASE=your_database_name
+   DB_USERNAME=your_database_user
+   DB_PASSWORD=your_database_password
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+Application URL:
+Set in .env:
+APP_URL=http://localhost:8000
 
-## Contributing
+FILE STORAGE SETUP
+------------------
+$ php artisan storage:link  # Creates symbolic link for public storage
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+DATABASE MIGRATION
+------------------
+$ php artisan migrate:fresh --seed
 
-## Code of Conduct
+RUNNING THE APPLICATION
+-----------------------
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Start Development Server:
+$ php artisan serve
 
-## Security Vulnerabilities
+Frontend Assets:
+Development:
+$ npm run dev
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Production Build:
+$ npm run build
 
-## License
+DASHBOARD ACCESS
+----------------
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Admin Dashboard:
+URL:      http://localhost:8000/admin
+Email:    admin@example.com
+Password: password
+
+Customer Dashboard:
+URL: http://localhost:8000/customer
+
+SECURITY NOTES
+-------------
+- Make sure your APP_URL is correct
+
+
+

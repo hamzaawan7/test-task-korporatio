@@ -3,10 +3,9 @@
 namespace App\Repositories;
 
 use App\Models\Category;
-use App\Repositories\EloquentRepository;
 use App\Repositories\Interfaces\CategoryRepositoryInterface;
 
-class CategoryRepository extends EloquentRepository implements CategoryRepositoryInterface
+class CategoryRepository extends BaseRepository implements CategoryRepositoryInterface
 {
     public function __construct(Category $model)
     {
