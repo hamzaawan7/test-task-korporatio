@@ -40,8 +40,12 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
         $query = $this->model->where('is_active', true);
 
         if (!empty($filters['category'])) {
-            $query->whereHas('categories', function($q) use ($filters) {
-                $q->where('categories.id', $filters['category']);
+            $selectedCategoryId = $filters['category'];
+            $query->whereHas('categories', function($q) use ($selectedCategoryId) {
+                $q->where(function($query) use ($selectedCategoryId) {
+                    $query->where('categories.id', $selectedCategoryId)
+                        ->orWhere('categories.parent_id', $selectedCategoryId);
+                });
             });
         }
 
